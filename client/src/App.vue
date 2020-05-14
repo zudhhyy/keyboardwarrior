@@ -2,9 +2,9 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
       <router-link to="/lobby">Lobby</router-link> |
       <router-link to="/leaderboard">Leaderboard</router-link>
+      <button v-show="check()" @click="logout()">Exit game</button>
     </div>
     <router-view/>
   </div>
@@ -13,7 +13,23 @@
 <script>
 
 export default {
-  name: 'App'
+  name: 'App',
+  methods: {
+    check () {
+      if (localStorage.username) {
+        return true
+      } else {
+        return false
+      }
+    },
+    logout () {
+      localStorage.removeItem('username')
+      this.$router.push({ name: 'Home' })
+    }
+  },
+  created () {
+    this.check()
+  }
 }
 </script>
 

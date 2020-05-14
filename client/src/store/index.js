@@ -23,6 +23,9 @@ export default new Vuex.Store({
       state.rooms.push(payload)
       state.id = payload.id
       // localStorage.setItem('roomId', payload.id)
+    },
+    editGames (state, payload) {
+      this.dispatch('fetchGames')
     }
   },
   actions: {
@@ -63,6 +66,22 @@ export default new Vuex.Store({
       })
         .then((response) => {
           context.commit('addGames', response.data)
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    },
+    editGame (context, id) {
+      // console.log(id)// <--- id
+      axios({
+        method: 'PUT',
+        url: `${url}/game/updateGame/${id}`,
+        data: {
+          player_count: +1
+        }
+      })
+        .then((response) => {
+          context.commit('editGames', response.data)
         })
         .catch((err) => {
           console.log(err)
