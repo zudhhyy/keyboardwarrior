@@ -14,8 +14,6 @@ class gameController{
 
     static createGame(req, res){
         const { is_started, player_count } = req.body
-        console.log(is_started, player_count)
-
         if(is_started == undefined || player_count == undefined){
             res.status(400).json({message: "BAD_REQUEST"})
         } else {
@@ -35,10 +33,6 @@ class gameController{
 
     static updateGame(req, res){
         const { is_started, player_count } = req.body
-
-        if(!is_started || !player_count){
-            res.status(400).json({message: "BAD_REQUEST"})
-        }
 
         Game.update({
             is_started,
