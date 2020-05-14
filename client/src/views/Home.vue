@@ -1,4 +1,5 @@
 <template>
+
         <div class="container text-center my-auto">
         <h1 class="mb-1">Keyboard Warrior</h1>
         <h3 class="mb-5">

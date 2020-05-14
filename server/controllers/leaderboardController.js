@@ -4,7 +4,7 @@ const { Leaderboard } = require('../models')
 class LeaderboardController {
 
   static fetchData (req,res){
-    Leaderboard.findAll()
+    Leaderboard.findAll({ order: [["id", "ASC"]] })
     .then(data=>{
       res.status(200).json(data)
     })
