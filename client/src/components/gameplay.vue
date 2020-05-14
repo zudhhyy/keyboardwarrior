@@ -2,11 +2,13 @@
     <div id="Gameplay-wrapper">
         <div id="Text" v-if="is_started">
             <h2 v-if="wrong">Duh, you type it wrong</h2>
+
             <h2>Time:{{time}}&nbsp;&nbsp;Score: {{score}}</h2>
             <h2>"{{showText}}"</h2>
             <form @click.prevent="submitted" v-if="time > 0">
                 <input type="text" v-model="userType">
                 <input type="submit" value="Submit" >
+
             </form>
         </div>
         <button v-else @click="decrement">start</button>
@@ -30,8 +32,10 @@ export default {
       text: null,
       userType: '',
       wrong: false,
+
       num: 2, // sesuaiin sama banyak text, ini index nya
       score: 0
+
     }
   },
   methods: {
@@ -71,6 +75,7 @@ export default {
     submitted () {
       if (this.showText === this.userType) {
         console.log('bener')
+
         this.score += 10
         if (this.num > 0) {
           this.num-- // sesuaiin sama banyak nya text
@@ -80,6 +85,7 @@ export default {
           this.score += this.time
           this.time = 0
         }
+
       } else {
         console.log('salah')
       }

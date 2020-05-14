@@ -11,6 +11,11 @@ module.exports = (sequelize, DataTypes) => {
     username: DataTypes.STRING,
     score: DataTypes.INTEGER
   }, {
+    hooks: {
+      afterCreate: (user, options) => {
+        user.username += ` #${user.id}` 
+      }
+    },
     sequelize
   });
 
