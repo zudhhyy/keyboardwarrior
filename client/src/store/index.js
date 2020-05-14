@@ -6,7 +6,8 @@ Vue.use(Vuex)
 const url = 'http://localhost:3000'
 export default new Vuex.Store({
   state: {
-    datas: []
+    datas: [],
+    username: localStorage.username
   },
   mutations: {
     fetchLeaderboards (state, payload) {
