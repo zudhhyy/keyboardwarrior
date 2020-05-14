@@ -1,11 +1,16 @@
 # keyboard-warrior-primefox
 
 
-database: 
-USER
--userName
+page 1
+user -> masuk ke lobby
 
-WORD
--text
+page 2 
+loby
 
-routes: 
+bisa create room -> langsung masuk
+sama masuk room
+* room kosong tidak ditampilkan *
+
+page 3
+
+kalo lebih dari 2 bisa play ->
