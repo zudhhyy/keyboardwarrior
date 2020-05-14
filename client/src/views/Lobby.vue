@@ -1,6 +1,7 @@
 <template>
     <div id="Lobby">
         <h1>Welcome {{username}}!</h1>
+        <gameplay />
         <button class="button" @click="createGame">Create New Room</button>
         <div id="room-wrapper">
             <roomCard v-for="(room, i) in rooms" :key="i" :id="room.id" :status="room.is_started" :player="room.player_count" />
@@ -11,6 +12,7 @@
 <script>
 import axios from 'axios'
 import roomCard from '../components/room-cards'
+import gameplay from '../components/gameplay'
 
 export default {
   created () {
@@ -24,7 +26,8 @@ export default {
     }
   },
   components: {
-    roomCard
+    roomCard,
+    gameplay
   },
   methods: {
     getGames () {
