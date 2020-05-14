@@ -1,20 +1,41 @@
 <template>
     <div id="Room-card">
         <div id="Inner">
-            <h2>Room #{{id}}</h2>
-            <h3>Status: {{status == true ? 'Already Started' : 'Waiting..'}}</h3>
-            <h3>Players: {{player}}</h3>
+            <h2>Room #{{room.id}}</h2>
+            <h3>Status: {{room.is_started == true ? 'Already Started' : 'Waiting..'}}</h3>
+            <h3>Players: {{room.player_count}}</h3>
         </div>
-        <button v-if="player < 4">Join</button>
+        <router-link :to="{ name: 'GameRoom', params: { id: room.id }}"
+        class="btn btn-primary"
+        @click="join(id, room.player_count)"
+        v-if="room.player_count < 4"
+        >JOIN</router-link>
     </div>
 </template>
 
 <script>
-export default {
-  props: ['id', 'status', 'player'],
-  methods: {
-    join () {
+import axios from 'axios'
 
+const url = 'http://localhost:3000'
+export default {
+  props: ['room'],
+  components: {
+  },
+  methods: {
+    join (id, player) {
+      axios({
+        method: 'PUT',
+        url: `${url}/game/updateGame/${id}`,
+        data: {
+          player_count: 1
+        }
+      })
+        .then((response) => {
+          this.$store.dispatch('fetchGames')
+        })
+        .catch((err) => {
+          console.log(err)
+        })
     }
   }
 }

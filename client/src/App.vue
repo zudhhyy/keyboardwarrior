@@ -7,18 +7,13 @@
       <router-link to="/leaderboard">Leaderboard</router-link>
     </div>
     <router-view/>
-    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
   </div>
 </template>
 
 <script>
-// import Home from './views/Home'
 
 export default {
-  name: 'App',
-  components: {
-    // Home
-  }
+  name: 'App'
 }
 </script>
 
