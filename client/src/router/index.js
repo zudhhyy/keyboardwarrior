@@ -24,6 +24,7 @@ const routes = [
     component: Lobby
   },
   {
+
     path: '/gameroom/:id',
     name: 'GameRoom',
     component: GameRoom

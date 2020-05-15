@@ -1,6 +1,7 @@
 # keyboard-warrior-primefox
 
-http://localhost3000 == landing page
+-----------------------------------------------------
+
 
 masukan username -> submit -> simpan username ke localStorage -> masuk ke lobby
 navagasi ke leaderboard -> masuk leaderboard page -> read leaderboard database

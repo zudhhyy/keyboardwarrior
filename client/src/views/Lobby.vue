@@ -5,6 +5,7 @@
         @click="addGames()"
         class="btn btn-primary"
         >CREATE ROOM</button>
+
         <div id="room-wrapper">
             <roomCard v-for="room in this.$store.state.rooms"
             :key="room.id"
@@ -15,7 +16,9 @@
 </template>
 
 <script>
+
 import roomCard from '../components/room-cards'
+import gameplay from '../components/gameplay'
 
 export default {
   created () {
@@ -28,7 +31,8 @@ export default {
     }
   },
   components: {
-    roomCard
+    roomCard,
+    gameplay
   },
   methods: {
     addGames () {

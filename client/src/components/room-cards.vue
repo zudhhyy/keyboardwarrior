@@ -1,6 +1,7 @@
 <template>
     <div id="Room-card">
         <div id="Inner">
+
             <h2>Room #{{room.id}}</h2>
             <h3>Status: {{room.is_started == true ? 'Already Started' : 'Waiting..'}}</h3>
             <h3>Players: {{room.player_count}}</h3>
@@ -15,10 +16,12 @@
         class="btn btn-primary"
         @click="join(room.id, room.player_count)"
         >JOIN ROOM</button>
+
     </div>
 </template>
 
 <script>
+
 // import axios from 'axios'
 
 // const url = 'http://localhost:3000'

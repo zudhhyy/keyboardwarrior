@@ -17,6 +17,7 @@
 
 <script>
 import axios from 'axios'
+
 export default {
   created () {
     this.fetchWords()
@@ -31,17 +32,19 @@ export default {
       text: null,
       userType: '',
       wrong: false,
+
       num: 2, // sesuaiin sama banyak text, ini index nya
       score: 0
+
     }
   },
   methods: {
     decrement () {
       this.showText = this.text[2].kalimat
-      // console.log('masuk decrement', this.time)
+      console.log('masuk decrement', this.time)
       this.is_started = true
       this.countdown = setInterval(() => {
-        // console.log('intervals', this.time)
+        console.log('intervals', this.time)
         if (this.time > 0) {
           this.time--
         } else {
@@ -49,6 +52,7 @@ export default {
         }
       }, 1000)
     },
+
     fetchWords () {
       axios({
         method: 'GET',
@@ -61,15 +65,17 @@ export default {
             response.data.splice(random, 1)
           }
           this.text = response.data
-          // console.log(this.text, 'this is text after spliced')
+          console.log(this.text, 'this is text after spliced')
         })
         .catch(response => {
           console.log(response)
         })
     },
+
     submitted () {
       if (this.showText === this.userType) {
         console.log('bener')
+
         this.score += 10
         if (this.num > 0) {
           this.num-- // sesuaiin sama banyak nya text
@@ -78,29 +84,10 @@ export default {
         } else {
           this.score += this.time
           this.time = 0
-          this.postScore()
         }
-      } 
-    },
-    postScore () {
-      if (this.score > 0) {
-        const dataUser = localStorage.getItem('username')
-        axios({
-          method: 'POST',
-          url: 'http://localhost:3000/leaderboard',
-          data: {
-            username: dataUser,
-            score: this.score
-          }
-        })
-          .then(response => {
-            localStorage.removeItem('username')
-            console.log(response)
-          })
-          .catch(err => {
-            console.log(err)
-          })
 
+      } else {
+        console.log('salah')
       }
     }
   }

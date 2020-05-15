@@ -9,10 +9,19 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
+<<<<<<< HEAD
     "core-js": "^3.6.4",
     "vue": "^2.6.11",
     "vue-router": "^3.1.6",
     "vuex": "^3.1.3"
+=======
+
+    "core-js": "^3.6.5",
+    "vue": "^2.6.11",
+    "vue-router": "^3.1.6",
+    "vuex": "^3.4.0"
+
+>>>>>>> d14ff642230417a1ed9853c9b70fd7b5071cf212
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.3.0",
