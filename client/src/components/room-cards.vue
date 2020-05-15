@@ -1,6 +1,7 @@
 <template>
     <div id="Room-card">
         <div id="Inner">
+<<<<<<< HEAD
             <h2>Room #{{room.id}}</h2>
             <h3>Status: {{room.is_started == true ? 'Already Started' : 'Waiting..'}}</h3>
             <h3>Players: {{room.player_count}}</h3>
@@ -15,10 +16,18 @@
         class="btn btn-primary"
         @click="join(room.id, room.player_count)"
         >JOIN ROOM</button>
+=======
+            <h2>Room #{{id}}</h2>
+            <h3>Status: {{status == true ? 'Already Started' : 'Waiting..'}}</h3>
+            <h3>Players: {{player}}</h3>
+        </div>
+        <button v-if="player < 4">Join</button>
+>>>>>>> d14ff642230417a1ed9853c9b70fd7b5071cf212
     </div>
 </template>
 
 <script>
+<<<<<<< HEAD
 // import axios from 'axios'
 
 // const url = 'http://localhost:3000'
@@ -44,6 +53,13 @@ export default {
       //   .catch((err) => {
       //     console.log(err)
       //   })
+=======
+export default {
+  props: ['id', 'status', 'player'],
+  methods: {
+    join () {
+
+>>>>>>> d14ff642230417a1ed9853c9b70fd7b5071cf212
     }
   }
 }

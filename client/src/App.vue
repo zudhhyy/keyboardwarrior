@@ -2,15 +2,25 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
+<<<<<<< HEAD
       <router-link to="/lobby">Lobby</router-link> |
       <router-link to="/leaderboard">Leaderboard</router-link>
       <button v-show="check()" @click="logout()">Exit game</button>
     </div>
     <router-view/>
+=======
+      <router-link to="/about">About</router-link> |
+      <router-link to="/lobby">Lobby</router-link> |
+      <router-link to="/leaderboard">Leaderboard</router-link>
+    </div>
+    <router-view/>
+    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
+>>>>>>> d14ff642230417a1ed9853c9b70fd7b5071cf212
   </div>
 </template>
 
 <script>
+<<<<<<< HEAD
 
 export default {
   name: 'App',
@@ -29,6 +39,14 @@ export default {
   },
   created () {
     this.check()
+=======
+// import Home from './views/Home'
+
+export default {
+  name: 'App',
+  components: {
+    // Home
+>>>>>>> d14ff642230417a1ed9853c9b70fd7b5071cf212
   }
 }
 </script>
