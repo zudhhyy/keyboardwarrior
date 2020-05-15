@@ -25,13 +25,8 @@ export default {
   methods: {
     submit () {
       const data = this.username
-<<<<<<< HEAD
       localStorage.setItem('username', data)
       this.$router.push({ name: 'Lobby' })
-=======
-      console.log(data)
-      localStorage.setItem('username', data)
->>>>>>> d14ff642230417a1ed9853c9b70fd7b5071cf212
     }
   }
 }

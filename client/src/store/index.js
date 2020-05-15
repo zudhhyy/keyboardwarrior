@@ -7,17 +7,13 @@ const url = 'http://localhost:3000'
 export default new Vuex.Store({
   state: {
     datas: [],
-<<<<<<< HEAD
     rooms: [],
     id: null,
-=======
->>>>>>> d14ff642230417a1ed9853c9b70fd7b5071cf212
     username: localStorage.username
   },
   mutations: {
     fetchLeaderboards (state, payload) {
       state.datas = payload
-<<<<<<< HEAD
     },
     fetchGames (state, payload) {
       state.rooms = payload
@@ -86,21 +82,6 @@ export default new Vuex.Store({
       })
         .then((response) => {
           context.commit('editGames', response.data)
-=======
-    }
-  },
-  actions: {
-    fetchLeaderboards (context) {
-      axios({
-        method: 'GET',
-        url: `${url}/leaderboard`,
-        headers: {
-          token: localStorage.getItem('token')
-        }
-      })
-        .then((response) => {
-          context.commit('fetchLeaderboards', response.data)
->>>>>>> d14ff642230417a1ed9853c9b70fd7b5071cf212
         })
         .catch((err) => {
           console.log(err)

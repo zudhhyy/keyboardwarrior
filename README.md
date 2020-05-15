@@ -1,7 +1,7 @@
 # keyboard-warrior-primefox
 
-<<<<<<< HEAD
-http://localhost3000 == landing page
+-----------------------------------------------------
+
 
 masukan username -> submit -> simpan username ke localStorage -> masuk ke lobby
 navagasi ke leaderboard -> masuk leaderboard page -> read leaderboard database
@@ -47,19 +47,3 @@ kalo lebih dari 2 bisa play ->
 
 page 4 = leaderboard
 
-=======
-
-page 1
-user -> masuk ke lobby
-
-page 2 
-loby
-
-bisa create room -> langsung masuk
-sama masuk room
-* room kosong tidak ditampilkan *
-
-page 3
-
-kalo lebih dari 2 bisa play ->
->>>>>>> d14ff642230417a1ed9853c9b70fd7b5071cf212

@@ -3,10 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Leaderboard from '../views/Leaderboard.vue'
 import Lobby from '../views/Lobby.vue'
-<<<<<<< HEAD
 import GameRoom from '../views/GameRoom.vue'
-=======
->>>>>>> d14ff642230417a1ed9853c9b70fd7b5071cf212
 
 Vue.use(VueRouter)
 
@@ -27,18 +24,10 @@ const routes = [
     component: Lobby
   },
   {
-<<<<<<< HEAD
+
     path: '/gameroom/:id',
     name: 'GameRoom',
     component: GameRoom
-=======
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
->>>>>>> d14ff642230417a1ed9853c9b70fd7b5071cf212
   }
 ]
 
@@ -48,7 +37,6 @@ const router = new VueRouter({
   routes
 })
 
-<<<<<<< HEAD
 router.beforeEach((to, from, next) => {
   if (to.name === 'Lobby' && !localStorage.username) {
     next({ name: 'Home' })
@@ -61,6 +49,4 @@ router.beforeEach((to, from, next) => {
   }
 })
 
-=======
->>>>>>> d14ff642230417a1ed9853c9b70fd7b5071cf212
 export default router
